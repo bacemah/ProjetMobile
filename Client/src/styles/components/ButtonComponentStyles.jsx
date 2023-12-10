@@ -7,13 +7,13 @@ const buttonComponentStyles = StyleSheet.create({
         justifyContent: 'center',
         paddingVertical: 12,
         borderRadius: 20,
-        borderWidth: 1,
-        width: '75%',
+        borderWidth: 1.75,
+        width: '80%',
     },
     text: {
         fontSize: 16,
         lineHeight: 21,
-        fontWeight: 'bold',
+        fontWeight: '300',
         letterSpacing: 1,
     },
 });

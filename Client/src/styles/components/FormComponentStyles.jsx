@@ -25,15 +25,11 @@ const formComponentStyles = StyleSheet.create({
         backgroundColor: "rgba(255,90,102,0.3)",
     },
     button: {
-        maginTop: 50,
+        marginTop : 40 , 
         paddingVertical: 12,
         borderRadius: 20,
-        borderWidth: 1,
+        borderWidth: 1.5,
         borderColor: Colors.light,
-        backgroundColor: "",
-    },
-    disabledButton: {
-        display: "none",
     },
     buttonText: {
         fontSize: 16,
@@ -42,9 +38,6 @@ const formComponentStyles = StyleSheet.create({
         letterSpacing: 1,
         textAlign: 'center',
         color: Colors.light,
-    },
-    disabledButtonText: {
-        color: "white",
     },
     error: {
         height: 40,

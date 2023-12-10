@@ -10,19 +10,19 @@ const landingScreenStyles = StyleSheet.create({
     welcome: {
         fontSize: 30,
         textAlign: 'center',
+        fontWeight : '200' ,
         color: Colors.light,
     },
     brand: {
         fontSize: 50,
-        fontWeight: 'bold',
-        marginBottom: 50,
+        fontWeight: '300',
+        marginBottom: 40,
     },
     button: {
         paddingVertical: 12,
         marginTop: 25,
         width: '75%',
         borderRadius: 20,
-        backgroundColor: "",
     },
     buttonText: {
         lineHeight: 21,
@@ -31,6 +31,14 @@ const landingScreenStyles = StyleSheet.create({
         textAlign: 'center',
         color: Colors.light,
     },
+    containerFac : {
+        width:  '100%' , 
+        display : 'flex' ,
+        flexDirection : 'column' , 
+        alignItems : 'center' , 
+        justifyContent : 'center',
+        marginTop : 20 ,
+    }
 });
 
 export default landingScreenStyles;

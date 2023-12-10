@@ -3,6 +3,7 @@ import { SafeAreaView, TextInput, TouchableOpacity, Text, View, ActivityIndicato
 import formComponentStyles from '../styles/components/FormComponentStyles'
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../app.constants';
+import ButtonComponent from './ButtonComponent';
 
 const FormComponent = (props) => {
     const navigation = useNavigation();
@@ -73,12 +74,6 @@ const FormComponent = (props) => {
         <SafeAreaView style={styles.area}>
             {type == 'register' && (
                 <>
-                    <View style={[styles.error, { 'display': !error ? 'none' : 'flex' }]}>
-                        <Text style={[styles.errorText, { fontSize: 12 }]}>{error}</Text>
-                    </View>
-                    <View style={[styles.success, { 'display': !success ? 'none' : 'flex' }]}>
-                        <Text style={[styles.errorText, { fontSize: 12, color: Colors.success }]}>{success}</Text>
-                    </View>
                     <TextInput
                         style={[styles.input, nomTouched && nom.trim().length === 0 && styles.invalidInput]}
                         placeholderTextColor={Colors.secondary}
@@ -116,7 +111,7 @@ const FormComponent = (props) => {
                         textContentType={'password'} />
                     <View style={styles.buttonContainer}>
                         <TouchableOpacity
-                            style={[styles.button, !isFormValid() && styles.disabledButton]}
+                            style={styles.button }
                             disabled={!isFormValid()}
                             onPress={handleSubmit}>
                             {isLoading ? (
@@ -124,7 +119,7 @@ const FormComponent = (props) => {
                             ) : (
                                 <Text style={styles.buttonText}>S'inscrire</Text>
                             )}
-                        </TouchableOpacity>
+                        </TouchableOpacity> 
                     </View>
                 </>
             )
@@ -156,7 +151,7 @@ const FormComponent = (props) => {
                                 textContentType={'password'} />
                             <View style={styles.buttonContainer}>
                                 <TouchableOpacity
-                                    style={[styles.button, !isFormValid() && styles.disabledButton]}
+                                    style={styles.button}
                                     disabled={!isFormValid()}
                                     onPress={handleSubmit}>
                                     {isLoading ? (
