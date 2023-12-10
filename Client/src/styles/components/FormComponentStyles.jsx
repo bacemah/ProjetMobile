@@ -1,7 +1,5 @@
 import { StyleSheet } from "react-native";
 import { Colors } from "../../../app.constants";
-import { StyleSheet } from "react-native";
-import { Colors } from "../../../app.constants";
 
 const formComponentStyles = StyleSheet.create({
     area: {
