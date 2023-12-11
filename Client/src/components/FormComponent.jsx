@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, TextInput, TouchableOpacity, Text, View, ActivityIndicator, Button } from 'react-native';
+import { SafeAreaView, TextInput, TouchableOpacity, Text, View, ActivityIndicator} from 'react-native';
+import { RadioButton } from 'react-native-paper';
 import formComponentStyles from '../styles/components/FormComponentStyles'
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../app.constants';
-import ButtonComponent from './ButtonComponent';
 
 const FormComponent = (props) => {
-    const navigation = useNavigation();
     const { type } = props;
+    const navigation = useNavigation();
     const [nom, setNom] = useState('');
     const [prenom, setPrenom] = useState('');
     const [password, setPassword] = useState('');
@@ -23,6 +23,7 @@ const FormComponent = (props) => {
     const [forgotPassword, setForgotPassword] = useState(false)
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const [checked , setChecked] = useState('')
 
     const handleNomChange = (text) => {
         setNom(text);
@@ -60,12 +61,20 @@ const FormComponent = (props) => {
     }
 
     const validateEmail = () => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        const emailStructur =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/  // bacem@supcom.tn
+        return emailStructur.test(email);
     }
 
     const isFormValid = () => {
         if (type === 'login') return password.trim().length > 0 && emailTouched && validateEmail();
-        if (type === 'register') return nom.trim().length > 0 && prenom.trim().length > 0 && emailTouched && validateEmail() && password == confirm_password && password.trim().length > 0;
+        if (type === 'register') return nom.trim().length > 0 && prenom.trim().length > 0 && emailTouched && validateEmail() && password == confirm_password && password.trim().length > 0 && checked.length > 0 ;
+
+    }
+    const radioAdminHander = ()=>{
+        setChecked("Admin")
+    }
+    const radioUserHandler = ()=>{
+        setChecked('User')
     }
 
     const styles = formComponentStyles;
@@ -109,6 +118,28 @@ const FormComponent = (props) => {
                         onChangeText={handleConfirmPasswordChange}
                         secureTextEntry={true}
                         textContentType={'password'} />
+                    <View style={styles.checkBoxContainer}>
+                        <View style={styles.radiBoxContainer}>
+                            <RadioButton 
+                            value='Admin'
+                            color={Colors.light}
+                            onPress={radioAdminHander}
+                            status={ checked === 'Admin' ? 'checked' : 'unchecked'  }
+
+                        />
+                            <Text style={styles.radioText}> Admin </Text>
+                        </View>
+                        <View style={styles.radiBoxContainer}>
+                             <RadioButton 
+                                value='User'
+                                color={Colors.light}
+                                onPress={radioUserHandler}
+                                status={checked === 'User' ? 'checked' : 'unchecked'}
+                            />  
+                            <Text style={styles.radioText}> User </Text>
+                        </View>
+                        
+                    </View>
                     <View style={styles.buttonContainer}>
                         <TouchableOpacity
                             style={styles.button }

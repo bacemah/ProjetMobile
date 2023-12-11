@@ -67,6 +67,22 @@ const formComponentStyles = StyleSheet.create({
         marginBottom: 20,
         justifyContent: 'center',
     },
+    checkBoxContainer : {
+        display : "flex" ,
+        flexDirection : 'row',
+        justifyContent : 'space-evenly' ,
+
+    } ,
+    radiBoxContainer : {
+        display : 'flex',
+        flexDirection : "row" ,
+        alignItems : 'center' ,
+
+    } ,
+    radioText : {
+        fontSize : 15 ,
+        color : Colors.secondary
+    }
 
 });
 

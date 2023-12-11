@@ -31,6 +31,16 @@ const registerScreenStyles = StyleSheet.create({
         color: Colors.danger,
         textAlign: 'center',
     },
+    ButtonContainer :{
+        display : 'flex' ,
+        flexDirection : 'column' ,
+        alignItems : "center" ,
+        justifyContent : 'flex-end' ,
+        width : "100%" ,
+        position : 'relative' ,
+        bottom : -50 ,
+ 
+    }
 });
 
 export default registerScreenStyles;
