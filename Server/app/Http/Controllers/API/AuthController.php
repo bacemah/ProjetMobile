@@ -39,11 +39,10 @@ class AuthController extends Controller
     }
     public function register(Request $request)
     {
-        if ($request->Admin ='admin'){
-            $ad = 1 ;
-        }
-        else{
-            $ad = 0 ; 
+        if ($request->Admin == 'admin') {
+            $ad = 1;
+        } else {
+            $ad = 0;
         }
         try {
             $request->validate([
@@ -56,7 +55,7 @@ class AuthController extends Controller
                 'first_name'      => $request->first_name,
                 'last_name'     => $request->last_name,
                 'email'     => $request->email,
-                'isAdmin' => $ad ,
+                'isAdmin' => $ad,
                 'password'  => bcrypt($request->password),
             ]);
 
