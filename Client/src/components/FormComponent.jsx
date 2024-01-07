@@ -78,6 +78,109 @@ const FormComponent = (props) => {
         setChecked('User')
     }
 
+    const register = async () => {
+        setIsLoading(true);
+        const response = await fetch(`${apiURL}/register`, {
+            method: "POST",
+            body: JSON.stringify({ 'first_name': prenom, 'last_name': nom, 'email': email, 'password': password , 'isAdmin' : 0 }),
+            headers: { 'Content-Type': 'Application/json' }
+        });
+
+        const jsonResponse = await response.json();
+
+        if (jsonResponse.status === '201') {
+            setIsLoading(false);
+            setSuccess(jsonResponse.message);
+            setError('');
+            AsyncStorage.clear();
+            await AsyncStorage.setItem('user', JSON.stringify(jsonResponse.user));
+            setTimeout(() => {
+                navigation.navigate('Verification');
+            }, 1000);
+        } else {
+            setIsLoading(false);
+            setError(jsonResponse.message);
+            setSuccess('');
+        }
+    }
+
+    const login = async () => {
+        setIsLoading(true);
+        const response = await fetch(`${apiURL}/login`, {
+            method: "POST",
+            body: JSON.stringify({ 'email': email, 'password': password }),
+            headers: { 'Content-Type': 'Application/json' }
+        });
+
+        const jsonResponse = await response.json();
+        if (jsonResponse.status !== '200') {
+            setIsLoading(false);
+            setError(jsonResponse.message);
+            setSuccess('');
+            const inputs = document.getElementsByTagName('input');
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].value = "";
+            }
+        } else {
+            setError('');
+            setSuccess(jsonResponse.message);
+            await AsyncStorage.clear();
+            await AsyncStorage.setItem('token', JSON.stringify(jsonResponse.token));
+            await AsyncStorage.setItem('user', JSON.stringify(jsonResponse.user));
+            await AsyncStorage.setItem('type', 'basic');
+            if (AsyncStorage.getItem('user') && AsyncStorage.getItem('token') && AsyncStorage.getItem('type')) {
+                setIsLoading(false);
+                setTimeout(() => {
+                    navigation.navigate('Home');
+                }, 1000);
+            }
+        }
+    }
+
+    const sendForgotPassword = async () => {
+        setIsLoading(true);
+        const response = await fetch(`${apiURL}/resetVerification`, {
+            method: "POST",
+            body: JSON.stringify({ 'email': email }),
+            headers: { 'Content-Type': 'Application/json' }
+        });
+
+        const jsonResponse = await response.json();
+
+        if (jsonResponse.status === '201') {
+            setIsLoading(false);
+            setSuccess(jsonResponse.message);
+            setError('');
+            await AsyncStorage.clear();
+            await AsyncStorage.setItem('email', JSON.stringify(email));
+            setTimeout(() => {
+                setForgotPassword(false);
+                navigation.navigate('Verification');
+            }, 1000);
+        } else {
+            setError(jsonResponse.message);
+            setSuccess('');
+            setIsLoading(false);
+        }
+    }
+
+    AsyncStorage.getItem('user')
+        .then((user) => {
+            if (user) {
+                if (!JSON.parse(user).email_verified_at) {
+                    setVerification(true);
+                } else {
+                    setVerification(false);
+                }
+            }
+            else {
+                setVerification(false);
+            }
+        })
+        .catch((error) => {
+            setVerification(false);
+        });
+
     const styles = formComponentStyles;
 
     return (
@@ -184,7 +287,7 @@ const FormComponent = (props) => {
                             <View style={styles.buttonContainer}>
                                 <TouchableOpacity
                                     style={styles.button}
-                                    disabled={!isFormValid()}
+                                    disabled={isFormValid()}
                                     onPress={handleSubmit}>
                                     {isLoading ? (
                                         <ActivityIndicator color={Colors.light} />
