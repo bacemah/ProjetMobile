@@ -1,5 +1,5 @@
 import React, {  useState } from 'react';
-import { View } from 'react-native';
+import { View} from 'react-native';
 import TaskList from '../components/TaskListComponent';
 import Header from '../components/HeaderComponent';
 import Footer from '../components/FooterComponent';
@@ -14,7 +14,7 @@ function HomeScreen({ navigation }) {
 
     return (
                 <View style={styles.container}>
-                    <Header isHome={true} title='' />
+                    <Header isHome={true} title='Hello User' />
                     <TaskList />
                     <Footer />
                 </View>
