@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { View, Text, FlatList, ScrollView, Image, TouchableOpacity, ActivityIndicator, SafeAreaView, Modal, ImageBackground, TextInput, Alert, PermissionsAndroid, RefreshControl } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import taskListComponentStyles from '../styles/components/TaskListComponentStyles';

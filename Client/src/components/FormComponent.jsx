@@ -56,7 +56,7 @@ const FormComponent = (props) => {
         setEmailTouched(true);
     }
     const handleSubmit = async () => {
-        if (type === 'login') await login();
+        if (type === 'login') await navigation.navigate('Home');
         if (type === 'register') await register();
     }
 
@@ -183,7 +183,7 @@ const FormComponent = (props) => {
                             <View style={styles.buttonContainer}>
                                 <TouchableOpacity
                                     style={styles.button}
-                                    disabled={!isFormValid()}
+                                    disabled={isFormValid()}
                                     onPress={handleSubmit}>
                                     {isLoading ? (
                                         <ActivityIndicator color={Colors.light} />
