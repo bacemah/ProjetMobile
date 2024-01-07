@@ -3,8 +3,10 @@ import { Colors } from "../../../app.constants";
 
 const homeScreenStyles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 1 ,
         backgroundColor: Colors.dark,
+        margin: 0,
+
     },
     taskContainer: {
         borderWidth: 1,

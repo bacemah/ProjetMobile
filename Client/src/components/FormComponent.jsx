@@ -5,6 +5,7 @@ import formComponentStyles from '../styles/components/FormComponentStyles'
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../app.constants';
 
+
 const FormComponent = (props) => {
     const { type } = props;
     const navigation = useNavigation();
@@ -56,7 +57,7 @@ const FormComponent = (props) => {
         setEmailTouched(true);
     }
     const handleSubmit = async () => {
-        if (type === 'login') await login();
+        if (type === 'login') await navigation.navigate('Home');
         if (type === 'register') await register();
     }
 
