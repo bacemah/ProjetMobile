@@ -2,7 +2,6 @@ import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import { styles } from "../../styles/screens/styles";
-
 import { FontAwesome } from "@expo/vector-icons";
 
 function Card({ title, location, date, price, id, navigation, eventImage }) {
