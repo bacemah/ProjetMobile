@@ -1,0 +1,57 @@
+import React, { useEffect, useState } from "react";
+import { FlatList, SafeAreaView, ScrollView, Text, View } from "react-native";
+import CategoriesElement from "../../components/categories/CategoriesElement";
+
+import { createStackNavigator } from "@react-navigation/stack";
+import CategoriesHome from "../../components/categories/CategoriesHome";
+import Events from "./Events";
+import EventDetail from "../EventDetail/EventDetail";
+
+const Stack = createStackNavigator();
+const Categories = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="CategoriesHome" component={CategoriesHome} />
+      <Stack.Screen
+        name="Events"
+        component={Events}
+        options={({ route }) => ({
+          title: route.params.title,
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: "#ffffff",
+            shadowColor: "#ffffff",
+            elevation: 0,
+          },
+          headerTintColor: "#76468F",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        })}
+      />
+      <Stack.Screen
+        name="EventDetail"
+        component={EventDetail}
+        options={({ route }) => ({
+          title: route.params.title,
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: "#ffffff",
+            shadowColor: "#ffffff",
+            elevation: 0,
+          },
+          headerTintColor: "#76468F",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        })}
+      />
+    </Stack.Navigator>
+  );
+};
+
+export default Categories;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Dimensions, Image, SafeAreaView, Text, View } from "react-native";
-import { getEventById } from "../api/categories";
+import { getEventById } from "../../../api/categories";
 import { FontAwesome } from "@expo/vector-icons";
 import { styles } from "./EventDetailCss";
 import MapView, { Marker } from "react-native-maps";

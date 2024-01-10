@@ -1,4 +1,11 @@
 import Constants from 'expo-constants';
+const { expoConfig } = Constants;
+
+
+export const GlobalConstants = {
+   apiURL: (expoConfig.debuggerHost) ? `http://${manifest.debuggerHost.split(':').shift()}:8000/api` : "http://127.0.0.1:8000/api"
+
+}
 
 export const Colors = {
     background: "#212529",

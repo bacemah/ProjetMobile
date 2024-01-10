@@ -9,7 +9,7 @@ import SelectMultiple from 'react-native-select-multiple'
 import ButtonComponent from './ButtonComponent';
 import { Colors } from '../../app.constants';
 import AddButton from './actions/AddButton'
-
+import GoBackButton from './actions/GoBackButton';
 
 
 const Accordion = ({ title, content, icon, type  }) => { 
@@ -117,7 +117,9 @@ const Accordion = ({ title, content, icon, type  }) => {
     const goBackToGroups = ()=>{
         setGroupButton('')
     }
-
+    const goBackToSettings = () => {
+    setEditGroupVisible(false)
+}
 
 
     // USER HANDLERS
@@ -206,6 +208,7 @@ const Accordion = ({ title, content, icon, type  }) => {
         setUpdatedGroupFrequency(text);
     }
     
+ const navigateHome = () => {navigation.navigate("Home")};
 
     return (
         <View style={styles.container}>
@@ -286,7 +289,8 @@ const Accordion = ({ title, content, icon, type  }) => {
                 visible={editGroupVisible}
                 onRequestClose={closeEditGroup} >
                 <View style={{ backgroundColor: Colors.background, borderRadius: 8, width: '100%', height: '100%', justifyContent: "center", alignItems: "center" }}>
-                    <View style={{ position: 'absolute', top: 40, width: '100%' }}>
+                    <View style={{ position: 'absolute', top: 50, width: '100%' }}>
+                        <GoBackButton onPress= {goBackToSettings}/>
                         <Header isHome={false} title='Groupes' />
                     </View>
 

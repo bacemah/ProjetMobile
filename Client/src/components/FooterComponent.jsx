@@ -14,12 +14,20 @@ const Footer = () => {
     const navigateToHome = () => {
         navigation.navigate('Home');
     };
+    const navigateToCategories = () => {
+        navigation.navigate('Categories');
+    }
+
+    const navigateToSearch = () => {
+        navigation.navigate('Search');
+    }
+
 
     return (
         <View style={styles.container}>
             <FooterButton name="home-outline" onPress={navigateToHome} />
-            <FooterButton name="search-outline" />
-            <FooterButton name="add-circle-outline" />
+            <FooterButton name="search-outline" onPress={navigateToSearch}/>
+            <FooterButton name="grid-outline" onPress={navigateToCategories} />
             <FooterButton name="settings-outline" onPress={navigateToSettings} />
         </View>
     );
