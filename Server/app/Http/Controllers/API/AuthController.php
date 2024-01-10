@@ -33,13 +33,13 @@ class AuthController extends Controller
             $user->email_verified_at = now();
             $user->save();
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Profil avec cet addresse mail existe.', 'status' => '500'], 500);
+            return response()->json(['message' => 'Profil avec cette addresse mail existe.', 'status' => '500'], 500);
         }
         return response()->json(['status' => '201', 'user' => $user], 201);
     }
     public function register(Request $request)
     {
-        if ($request->Admin == 'admin') {
+        if ($request->isAdmin == 'admin') {
             $ad = 1;
         } else {
             $ad = 0;
