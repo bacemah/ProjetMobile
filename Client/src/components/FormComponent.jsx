@@ -82,7 +82,7 @@ const FormComponent = (props) => {
         setIsLoading(true);
         const response = await fetch(`${apiURL}/register`, {
             method: "POST",
-            body: JSON.stringify({ 'first_name': prenom, 'last_name': nom, 'email': email, 'password': password , 'isAdmin' : 0 }),
+            body: JSON.stringify({ 'first_name': prenom, 'last_name': nom, 'email': email, 'password': password , 'isAdmin' : checked }),
             headers: { 'Content-Type': 'Application/json' }
         });
 

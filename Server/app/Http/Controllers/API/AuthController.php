@@ -37,9 +37,11 @@ class AuthController extends Controller
         }
         return response()->json(['status' => '201', 'user' => $user], 201);
     }
+
+
     public function register(Request $request)
     {
-        if ($request->Admin == 'admin') {
+        if ($request->isAdmin == 'Admin') {
             $ad = 1;
         } else {
             $ad = 0;
