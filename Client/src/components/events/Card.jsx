@@ -58,7 +58,7 @@ function Card({ title, location, date, price, id, navigation, eventImage }) {
         style={st.cardDetailsButton}
         onPress={goToDetailPage}
       >
-        <Text style={{ color: "white" }}>Detay</Text>
+        <Text style={{ color: "white" }}>Detail</Text>
       </TouchableOpacity>
     </View>
   );

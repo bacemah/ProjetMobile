@@ -21,11 +21,11 @@ function TaskList({ navigation }) {
     if (data.length === 0) return;
     const today = new Date();
     const willComeEvents = await data.filter((item) => {
-      const eventDate = new Date(item.EtkinlikBaslamaTarihi);
+      const eventDate = new Date(item.EventStartDate);
       return eventDate > today;
     });
     const thisWeekEvents = willComeEvents.filter((item) => {
-      const eventDate = new Date(item.EtkinlikBaslamaTarihi);
+      const eventDate = new Date(item.EventStartDate);
       const diffTime = eventDate.getTime() - today.getTime();
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       return diffDays <= 7;
@@ -38,11 +38,11 @@ function TaskList({ navigation }) {
     if (data.length === 0) return;
     const today = new Date();
     const willComeEvents = await data.filter((item) => {
-      const eventDate = new Date(item.EtkinlikBaslamaTarihi);
+      const eventDate = new Date(item.EventStartDate);
       return eventDate > today;
     });
     const featuredEventData = await willComeEvents.filter((item) => {
-      const eventDate = new Date(item.EtkinlikBaslamaTarihi);
+      const eventDate = new Date(item.EventStartDate);
       const diffTime = eventDate.getTime() > today.getTime();
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       return diffDays >= 0 && diffDays <= 30;
@@ -108,17 +108,17 @@ function TaskList({ navigation }) {
             </View>
             <View style={st.secondView}>
               <EventsList
-                title={"Bu Hafta Etkinlikleri"}
+                title={"This Week's Events"}
                 data={todayEvent}
                 navigation={navigation}
               />
               <EventsList
-                title={"Öne Çıkan Etkinlikler"}
+                title={"Featured Events"}
                 data={featuredEvent}
                 navigation={navigation}
               />
               <EventsList
-                title={"Geçmiş Etkinlikler"}
+                title={"Past Events"}
                 data={oldEvents}
                 navigation={navigation}
               />

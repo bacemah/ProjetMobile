@@ -32,9 +32,9 @@ const EventsList = ({ data, title, navigation }) => {
                 <Card
                   key={item.Id}
                   title={
-                    item.Adi.length > 20
-                      ? item.Adi.slice(0, 20) + "..."
-                      : item.Adi
+                    item.FirstName.length > 20
+                      ? item.FirstName.slice(0, 20) + "..."
+                      : item.FirstName
                   }
                   location={
                     item.EventCenter.length > 20

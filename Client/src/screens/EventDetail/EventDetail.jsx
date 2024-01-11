@@ -41,7 +41,7 @@ function EventDetail({ route }) {
                     fontWeight: "bold",
                   }}
                 >
-                  {event.Adi}
+                  {event.FirstName}
                 </Text>
                 <View
                   style={{
@@ -99,7 +99,7 @@ function EventDetail({ route }) {
                 marginLeft: 20,
               }}
             >
-              Etkinlik Detayı
+              Event's Details
             </Text>
             <Text
               style={{

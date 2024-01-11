@@ -33,19 +33,19 @@ function CategoriesElement({ title, navigation }) {
             style={styles.categoriesCardContentImg}
           />
         )}
-        {title === "KONSER" && (
+        {title === "CONCERT" && (
           <Image
             source={require("../../../assets/sing.png")}
             style={styles.categoriesCardContentImg}
           />
         )}
-        {title === "SERGİ" && (
+        {title === "SHOW" && (
           <Image
             source={require("../../../assets/sergi.png")}
             style={styles.categoriesCardContentImg}
           />
         )}
-        {title === "TİYATRO" && (
+        {title === "THEATRE" && (
           <Image
             source={require("../../../assets/tiyatro.png")}
             style={styles.categoriesCardContentImg}
