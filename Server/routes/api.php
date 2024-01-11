@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\API\AuthController;
 
@@ -31,4 +32,13 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/register', 'register');
     Route::post('/registerOrLoginGoogle', 'registerOrLoginGoogle');
     Route::post('/verification', 'verification');
+});
+
+Route::controller(UserController::class)->group(function () {
+    Route::patch('/users/{id}/update', 'update');
+    Route::get('/users/{id}', 'view');
+    Route::get('/users/groups/{groupId}', 'getGroupUsers');
+    Route::get('/users/getReviews/{groupId}', 'getUserGroupReviews');
+    Route::post('/users/{partnerId}/{groupId}', 'sendUserGroupReview');
+    Route::post('/user/InviteUser', 'InviteUser');
 });

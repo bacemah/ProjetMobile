@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect , useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Modal, View, Text, TouchableOpacity, Alert, Switch, TextInput, Image, ActivityIndicator, ScrollView, Platform, ImageBackground, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -7,9 +7,12 @@ import accordionCoponentStyles from '../styles/components/AccordionComponentStyl
 import DialogInput from 'react-native-dialog-input';
 import SelectMultiple from 'react-native-select-multiple'
 import ButtonComponent from './ButtonComponent';
-import { Colors } from '../../app.constants';
+import {GlobalConstants, Colors} from '../../app.constants';
 import AddButton from './actions/AddButton'
 import GoBackButton from './actions/GoBackButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
 
 
 const Accordion = ({ title, content, icon, type  }) => { 
@@ -71,14 +74,38 @@ const Accordion = ({ title, content, icon, type  }) => {
     const [cardSelectedTags, setCardSelectedTags] = useState('');
     const [cardTags, setCardTags] = useState('');
 
-
-
-
-
     const [editUserVisible, setEditUserVisible] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
     const navigation = useNavigation();
+    const apiURL = GlobalConstants.apiURL;
     
+
+    useEffect(() => {
+        const fetchDataFromAsyncStorage = async () => {
+            try {
+                const localUser = await AsyncStorage.getItem('user');
+                // console.log(localUser);
+                setUser(JSON.parse(localUser));
+                if (localUser) {
+                const parsedUser = JSON.parse(localUser);
+                    setFirstName(parsedUser.first_name);
+                    setLastName(parsedUser.last_name);
+                    setEmail(parsedUser.email);
+                }
+            } catch (error) {
+                // Handle error
+            };
+        }
+        fetchDataFromAsyncStorage();
+    },[]);
+
+    setTimeout(
+        () => {
+            if (!user) {
+                return null
+            }
+        }
+    ,3000)
 
     const canEdit = ()=>{ return true }
 
@@ -93,6 +120,24 @@ const Accordion = ({ title, content, icon, type  }) => {
             cronjob();
         }
     };
+    const editUser = async () => {
+        setIsLoading(true);
+        const response = await fetch(`${apiURL}/users/${user.id}/update`, {
+            method: "PATCH",
+            body: JSON.stringify({ 'first_name': firstName, 'last_name': lastName, 'email': email, 'password': password }),
+            headers: { 'Content-Type': 'Application/json' }
+        });
+
+        const jsonResponse = await response.json();
+        if (jsonResponse.status == '200') {
+            setIsLoading(false);
+            await AsyncStorage.clear();
+            navigation.navigate('Login');
+        } else {
+            setIsLoading(false);
+            alert(jsonResponse.message);
+        }
+    }
 
 
     const closeEditUser = () => {
@@ -270,7 +315,9 @@ const Accordion = ({ title, content, icon, type  }) => {
 
                             {canEdit() && (
                                 <>
-                                    <TouchableOpacity  style={styles.button}>
+                                    <TouchableOpacity style={styles.button}
+                                        onPress={editUser}
+                                    >
                                         {isLoading ? (
                                             <ActivityIndicator color={Colors.light} />
                                         ) : (
