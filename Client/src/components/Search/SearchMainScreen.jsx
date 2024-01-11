@@ -122,9 +122,7 @@ function SearchMainScreen({ navigation }) {
           style={styles.searchInput}
           placeholder="Search Events"
           placeholderTextColor="grey"
-          onChangeText={(text) => {
-            handleSearch(text);
-          }}
+          onChangeText={handleSearch}
           value={searchText}
         />
         <TouchableOpacity onPress={showFilterModal}>
@@ -134,7 +132,7 @@ function SearchMainScreen({ navigation }) {
 
       <View style={styles.searchBody}>
         <FlatList
-          data={searchResults.length > 0 || filteredEvents.length >  0 ? filteredEvents : events }
+          data={searchResults.length > 0 || filteredEvents.length >  0 ? searchResults : events }
           renderItem={({ item }) => (
             <SearchCard
               title={item.FirstName}
