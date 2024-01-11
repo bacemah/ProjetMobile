@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreGroupRequest;
 use App\Http\Requests\UpdateGroupRequest;
 
@@ -19,10 +20,30 @@ class GroupController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        try {
+            $request->validate([
+                'creator_id'    => 'required',
+                'name'          => 'required',
+                'description'     => '',
+                'type'     => '',
+                'hobby'     => '',
+            ]);
+            $group = Group::create([
+                'creator_id'      => $request->creator_id,
+                'name'      => $request->name,
+                'description'      => $request->description ?? '',
+                'type'      => $request->type ?? "freindly",
+                'hobby'      => $request->hobby ?? "nothing",
+            ]);
+            $group->save();
+            return response()->json($group);
+        } catch (\Exception $e) {
+            return response()->json($e);
+        }
     }
+
 
     /**
      * Store a newly created resource in storage.
