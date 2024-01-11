@@ -11,8 +11,9 @@ import {GlobalConstants, Colors} from '../../app.constants';
 import AddButton from './actions/AddButton'
 import GoBackButton from './actions/GoBackButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
+import EditButton    from './actions/EditButton';
+import DeleteButton from './actions/DeleteButton';
+import ViewButton from './actions/ViewButton';
 
 
 const Accordion = ({ title, content, icon, type  }) => { 
@@ -46,14 +47,12 @@ const Accordion = ({ title, content, icon, type  }) => {
 
     const [groupName, setGroupName] = useState('');
     const [groupDescription, setGroupDescription] = useState('');
-    const [groupFrequency, setGroupFrequency] = useState('');
+    const [groupType, setGroupType] = useState('');
     const [updatedGroupName, setUpdatedGroupName] = useState('');
     const [updatedGroupDescription, setUpdatedGroupDescription] = useState('');
     const [updatedGroupFrequency, setUpdatedGroupFrequency] = useState('');
     const [groupSelectedTags, setGroupSelectedTags] = useState('');
     const [groupSelectedTypes, setGroupSelectedTypes] = useState('');
-    const [groupTags, setGroupTags] = useState('');
-    const [groupTypes, setGroupTypes] = useState('');
 
     const [dialogVisible, setDialogVisible] = React.useState(false);
     const [emailInput, setEmailInput] = React.useState('');
@@ -73,6 +72,9 @@ const Accordion = ({ title, content, icon, type  }) => {
     const [updatedCardType, setUpdatedCardType] = useState('');
     const [cardSelectedTags, setCardSelectedTags] = useState('');
     const [cardTags, setCardTags] = useState('');
+
+    const [groupHobby, setGroupHobby] = useState('');
+
 
     const [editUserVisible, setEditUserVisible] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
@@ -115,9 +117,6 @@ const Accordion = ({ title, content, icon, type  }) => {
         }
         if (type == "button") {
             navigation.navigate("Landing");
-        }
-        if (type == "cronjob") {
-            cronjob();
         }
     };
     const editUser = async () => {
@@ -230,7 +229,7 @@ const Accordion = ({ title, content, icon, type  }) => {
     }
 
     const handleGroupFrequencyChange = (text) => {
-        setGroupFrequency(text);
+        setGroupType(text);
     }
 
     const handleGroupSelectionTags = (selectedGroupTags) => {
@@ -252,8 +251,41 @@ const Accordion = ({ title, content, icon, type  }) => {
     const handleUpdatedGroupFrequencyChange = (text) => {
         setUpdatedGroupFrequency(text);
     }
+
+    const handleGroupHobbyChange = (text) => {
+        setGroupHobby(text);
+    }
     
- const navigateHome = () => {navigation.navigate("Home")};
+    const navigateHome = () => { navigation.navigate("Home") };
+    const getGroups = async () => {
+        const response = await fetch(`${apiURL}/groups`,
+            {
+                method: "GET",
+            });
+
+        const data = await response.json();
+        setGroups(data);
+        return groups;
+    }
+    useEffect(() => {
+        getGroups();
+    },[])
+
+
+     const createGroup = async () => {
+         const response = await fetch(`${apiURL}/groups`,
+            {
+                method: "POST",
+                body: JSON.stringify({ 'name': groupName, 'creator_id': user.id, 'description': groupDescription, 'type': groupType, 'hobby' : groupHobby}),
+                headers: {
+                    'Content-Type': 'Application/json'
+                }
+            });
+
+         const data = await response.json();
+         goBackToGroups();
+    }
+
 
     return (
         <View style={styles.container}>
@@ -346,29 +378,14 @@ const Accordion = ({ title, content, icon, type  }) => {
                             {(groupButton == '') && (
                                 <View >
                                     {Array.isArray(groups) ? groups.map((group) => (
-                                        <View style={[styles.taskContainer, { width: 300, display: isUserValidated(group) ? 'flex' : 'none', alignSelf: 'center', backgroundColor: !group.is_paused ? Colors.dark : 'transparent' }]}>
+                                        <View style={[styles.taskContainer, { width: 300, display:  'flex' , alignSelf: 'center', backgroundColor:  Colors.dark  }]}>
                                             <View style={{ justifyContent: 'space-around', padding: 5, flexDirection: 'row' }}>
                                                 <View style={styles.topTagContainer}>
                                                     <Text style={styles.taskTitle}>{group.name}</Text>
                                                     <Text style={[styles.taskDescription, { fontSize: 10, color: 'gray' }]}>{group.description}</Text>
                                                 </View>
-                                                <View style={styles.countNumbersContainer}>
-                                                    <Text style={styles.taskTitle}>{group.tasks_frequency}</Text>
-                                                    <Text style={[styles.taskDescription, { fontSize: 10, color: 'gray' }]}>Fréquence des tâches</Text>
-                                                </View>
                                             </View>
-                                            <View style={{ justifyContent: 'flex-end', flexDirection: 'row', marginTop: 5 }}>
-                                                <View style={styles.tagContainer}>
-                                                    {Array.isArray(group.tags) ? group.tags.map((tag) => (
-                                                        <View style={styles.tag}><Text>{tag.name}</Text></View>
-                                                    )) : null}
-                                                </View>
-                                                <View style={styles.countNumbersContainer}>
-                                                    <Text style={styles.taskTitle}>{group.users.length}</Text>
-                                                    <Text style={[styles.taskDescription, { fontSize: 10, color: 'gray' }]}>membres</Text>
-                                                </View>
-                                            </View>
-                                            <View style={{ justifyContent: 'center', flexDirection: 'row', marginTop: 5 }}>
+                                               <View style={{ justifyContent: 'center', flexDirection: 'row', marginTop: 5 }}>
                                                 <ViewButton onPress={() => handleViewGroup(group.id)} />
                                                 {(!group.is_paused) && (group.creator_id == user.id) && (
                                                     <View style={{ flexDirection: 'row' }}>
@@ -402,14 +419,25 @@ const Accordion = ({ title, content, icon, type  }) => {
                                         onChangeText={handleGroupDescriptionChange}
                                     />
                                     <View style={{ paddingHorizontal: 16 }}>
-                                        <Text style={{ color: Colors.light, }}>Tags associés aux groupe :</Text>
+                                        <Text style={{ color: Colors.light, }}>Type du groupe :</Text>
                                     </View>
                                     <TextInput
                                         style={[styles.taskContainer, { color: 'white' }]}
-                                        placeholder="Fréquence par jours du groupe"
+                                        placeholder="Type du Groupe"
                                         placeholderTextColor={Colors.secondary}
-                                        value={groupFrequency}
+                                        value={groupType}
                                         onChangeText={handleGroupFrequencyChange}
+                                    />
+
+                                    <View style={{ paddingHorizontal: 16 }}>
+                                        <Text style={{ color: Colors.light, }}>Hobby :</Text>
+                                    </View>
+                                    <TextInput
+                                        style={[styles.taskContainer, { color: 'white' }]}
+                                        placeholder="Hobby"
+                                        placeholderTextColor={Colors.secondary}
+                                        value={groupHobby}
+                                        onChangeText={handleGroupHobbyChange}
                                     />
 
 
@@ -417,7 +445,7 @@ const Accordion = ({ title, content, icon, type  }) => {
                                         <TouchableOpacity onPress={goBackToGroups} style={[styles.button, { backgroundColor: 'transparent' }]}>
                                             <Text style={{ color: Colors.light, textAlign: 'center' }}>Retour</Text>
                                         </TouchableOpacity>
-                                        <TouchableOpacity style={styles.button}>
+                                        <TouchableOpacity style={styles.button} onPress={createGroup}>
                                             <Text style={{ color: Colors.light, textAlign: 'center' }}>Ajouter</Text>
                                         </TouchableOpacity>
                                     </View>
