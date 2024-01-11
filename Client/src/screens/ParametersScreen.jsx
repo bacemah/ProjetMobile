@@ -6,9 +6,15 @@ import Footer from '../components/FooterComponent';
 import Header from '../components/HeaderComponent';
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../app.constants';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 function ParametersScreen() {
     const [isAdmin, setIsAdmin] = useState(0);
     const navigation = useNavigation()
+    useEffect(() => {
+        AsyncStorage.getItem('user').then(localUser => {
+            setIsAdmin(JSON.parse(localUser).isAdmin);
+        });
+    }, []);
 
     return (
         <View style={{ height: '100%', backgroundColor: Colors.background }}>

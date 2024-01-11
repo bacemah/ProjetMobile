@@ -105,7 +105,6 @@ const FormComponent = (props) => {
     }
 
     const login = async () => {
-        console.log(`${apiURL}/login`);
         setIsLoading(true);
         const response = await fetch(`${apiURL}/login`, {
             method: "POST",
