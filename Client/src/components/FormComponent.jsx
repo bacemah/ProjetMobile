@@ -95,9 +95,8 @@ const FormComponent = (props) => {
             setError('');
             AsyncStorage.clear();
             await AsyncStorage.setItem('user', JSON.stringify(jsonResponse.user));
-            setTimeout(() => {
-                navigation.navigate('Verification');
-            }, 1000);
+            
+            navigation.navigate('Verification');
         } else {
             setIsLoading(false);
             setError(jsonResponse.message);
@@ -155,10 +154,9 @@ const FormComponent = (props) => {
             setError('');
             await AsyncStorage.clear();
             await AsyncStorage.setItem('email', JSON.stringify(email));
-            setTimeout(() => {
-                setForgotPassword(false);
-                navigation.navigate('Verification');
-            }, 1000);
+            setForgotPassword(false);
+            navigation.navigate('Verification');
+
         } else {
             setError(jsonResponse.message);
             setSuccess('');
@@ -289,7 +287,9 @@ const FormComponent = (props) => {
                             <View style={styles.buttonContainer}>
                                 <TouchableOpacity
                                     style={styles.button}
-                                    onPress={handleSubmit}>
+                                    onPress={handleSubmit}
+                                    disabled= {!isFormValid()} 
+                                >
                                     {isLoading ? (
                                         <ActivityIndicator color={Colors.light} />
                                     ) : (

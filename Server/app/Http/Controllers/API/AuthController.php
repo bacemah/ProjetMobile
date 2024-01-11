@@ -127,15 +127,10 @@ class AuthController extends Controller
             if (!$user) {
                 return response()->json(['message' => "Profil avec cet addresse mail n'existe pas.", 'status' => '500'], 500);
             } else {
-                if ($user->type == 'basic') {
-                    $verificationNumber = $this->generateVerificationNumber();
-                    Cache::put('verification_number_' . $user->id, $verificationNumber, 30 * 60);
-                    Mail::to($user)->send(new EmailVerification($user, $verificationNumber));
-                } else if ($user->type == 'google') {
-                    return response()->json(['message' => 'Ce compte est lié à Google', 'status' => '500']);
-                } else {
-                    return response()->json(['message' => 'Ce compte est lié à Facebook', 'status' => '500']);
-                }
+
+                $verificationNumber = $this->generateVerificationNumber();
+                Cache::put('verification_number_' . $user->id, $verificationNumber, 30 * 60);
+                Mail::to($user)->send(new EmailVerification($user, $verificationNumber));
             }
         } catch (\Exception $e) {
             return response()->json(['message' => "Profil avec cet addresse mail n'existe pas.", 'status' => '500'], 500);
