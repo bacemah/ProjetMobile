@@ -5,7 +5,7 @@ const DATA = [
     Id: 52591,
     FirstName: "Acoustic Guitar Evening: Melodies of Love",
     // Adi
-    EventEndDate: "2023-10-18T22:00:00",
+    EventEndDate: "2023-12-31T22:00:00",
     // EtkinlikBitisTarihi
     littleposter:
       // KucukAfis
@@ -30,7 +30,7 @@ const DATA = [
       "https://im.haberturk.com/l/2021/12/03/ver1638536162/3272038/jpg/640x360",
     EventUrl: "akustik-gitar-aksami-sevgi-melodileri",
     // EtkinlikUrl
-    EventStartDate: "2023-10-18T20:30:00",
+    EventStartDate: "2023-12-31T20:30:00",
     // EtkinlikBaslamaTarihi
     Artist: "Eren Demir",
     // Sanatci
@@ -147,7 +147,7 @@ const DATA = [
     Type: "THEATRE",
     Id: 5252,
     FirstName: "Comedy Feast: Comedy Games Guaranteed to Laugh",
-    EventEndDate: "2023-09-25T22:00:00",
+    EventEndDate: "2023-12-31T22:00:00",
     littleposter:
       "https://i4.hurimg.com/i/hurriyet/75/750x422/5d78c77145d2a023a0d35648.jpg",
     EventCenter: "Gülmece Theater Stage",
@@ -162,14 +162,14 @@ const DATA = [
     Picture:
       "https://i4.hurimg.com/i/hurriyet/75/750x422/5d78c77145d2a023a0d35648.jpg",
     EventUrl: "komedi-soleni-gulme-garantili-komedi-oyunlari",
-    EventStartDate: "2023-09-25T19:30:00",
+    EventStartDate: "2023-12-31T19:30:00",
     Artist: null,
   },
   {
     Type: "SHOW",
     Id: 5253,
     FirstName: "Winds of the Renaissance: The Magical World of Painters",
-    EventEndDate: "2023-09-30T18:00:00",
+    EventEndDate: "2024-01-11T18:00:00",
     littleposter: "https://flaps.club/wp-content/uploads/2019/04/unnamed-2.png",
     EventCenter: "Sanat Çağı Galerisi",
     EventCenterLocation: {
@@ -182,14 +182,14 @@ const DATA = [
     Isitfree: true,
     Picture: "https://flaps.club/wp-content/uploads/2019/04/unnamed-2.png",
     EventUrl: "ronesans-ruzgarlari-ressamlarin-buyulu-dunyasi",
-    EventStartDate: "2023-09-20T10:00:00",
+    EventStartDate: "2024-01-11T10:00:00",
     Artist: null,
   },
   {
     Type: "CONCERT",
     Id: 5254,
     FirstName: "Rock Night: Selections from Legendary Rock Bands",
-    EventEndDate: "2023-10-05T23:30:00",
+    EventEndDate: "2024-01-11T23:30:00",
     littleposter:
       "https://beyazgezegen.com/wp-content/uploads/2019/10/Ramones-1st_Album_Placeholder_Image.jpg",
     EventCenter: "Rock Arena",
@@ -204,14 +204,14 @@ const DATA = [
     Picture:
       "https://beyazgezegen.com/wp-content/uploads/2019/10/Ramones-1st_Album_Placeholder_Image.jpg",
     EventUrl: "rock-gecesi-efsane-rock-gruplarindan-seckiler",
-    EventStartDate: "2023-10-05T20:00:00",
+    EventStartDate: "2024-01-11T20:00:00",
     Artist: "Black Roses",
   },
   {
     Type: "THEATRE",
     Id: 5255,
     FirstName: "Dramatic Journeys: A Night of Emotional Theater",
-    EventEndDate: "2023-10-10T21:30:00",
+    EventEndDate: "2024-01-11T21:30:00",
     littleposter:
       "https://cdn.evrimagaci.org/sZQwQgecN8z6NV4d4Nc3ckjvfCA=/evrimagaci.org%2Fpublic%2Fcontent_media%2F75009ecf55317438f7ed7b7e71dcd54a.jpg",
     EventCenter: "Duygu Sahnesi",
@@ -226,14 +226,14 @@ const DATA = [
     Picture:
       "https://cdn.evrimagaci.org/sZQwQgecN8z6NV4d4Nc3ckjvfCA=/evrimagaci.org%2Fpublic%2Fcontent_media%2F75009ecf55317438f7ed7b7e71dcd54a.jpg",
     EventUrl: "dramatik-yolculuklar-duygusal-tiyatro-gecesi",
-    EventStartDate: "2023-10-10T19:00:00",
+    EventStartDate: "2024-01-11T19:00:00",
     Artist: null,
   },
   {
     Type: "SHOW",
     Id: 5256,
     FirstName: "In Search of Modern Art: Abstract Paintings Exhibition",
-    EventEndDate: "2023-10-15T19:30:00",
+    EventEndDate: "2024-01-15T19:30:00",
     littleposter:
       "https://www.klashaber.com.tr/images/haberler/2020/07/istanbul_modernin_koleksiyon_sergisi_yenilendi_h42085_870be.jpg",
     EventCenter: "Soyut Sanat Galerisi",
@@ -248,14 +248,14 @@ const DATA = [
     Picture:
       "https://www.klashaber.com.tr/images/haberler/2020/07/istanbul_modernin_koleksiyon_sergisi_yenilendi_h42085_870be.jpg",
     EventUrl: "modern-sanatin-izinde-soyut-tablolar-sergisi",
-    EventStartDate: "2023-10-01T13:00:00",
+    EventStartDate: "2024-01-15T13:00:00",
     Artist: null,
   },
   {
     Type: "CONCERT",
     Id: 5257,
     FirstName: "Classical Acoustics: Favorite Classical Works",
-    EventEndDate: "2023-10-18T22:00:00",
+    EventEndDate: "2024-01-15T22:00:00",
     littleposter:
       "https://www.kku.edu.tr/Content/Anasayfa/Haber/NewFolder/gitar3.jpg",
     EventCenter: "Harmony CONCERT Salonu",
@@ -269,14 +269,14 @@ const DATA = [
     Isitfree: false,
     Picture: "https://www.kku.edu.tr/Content/Anasayfa/Haber/NewFolder/gitar3.jpg",
     EventUrl: "klasik-akustik-en-sevilen-klasik-eserler",
-    EventStartDate: "2023-10-18T19:00:00",
+    EventStartDate: "2024-01-15T19:00:00",
     Artist: "Emre Aydın",
   },
   {
     Type: "THEATRE",
     Id: 5258,
     FirstName: "Mysterious Scenes: Detective Theater Show",
-    EventEndDate: "2023-10-22T20:30:00",
+    EventEndDate: "2024-01-15T20:30:00",
     littleposter:
       "https://www.istanbulses.com/d/other/2022/03/07/aI8fltkqx1fd6av2xbn5zrwv.jpg",
     EventCenter: "Gizem Tiyatro Sahnesi",
@@ -291,14 +291,14 @@ const DATA = [
     Picture:
       "https://www.istanbulses.com/d/other/2022/03/07/aI8fltkqx1fd6av2xbn5zrwv.jpg",
     EventUrl: "gizemli-sahneler-polisiye-tiyatro-gosterisi",
-    EventStartDate: "2023-10-22T18:00:00",
+    EventStartDate: "2024-01-15T18:00:00",
     Artist: null,
   },
   {
     Type: "SHOW",
     Id: 52592,
     FirstName: "In Search of Photography: Chasing Memories",
-    EventEndDate: "2023-10-27T16:30:00",
+    EventEndDate: "2024-01-15T16:30:00",
     littleposter:
       "https://www.millireasuranssanatgalerisi.com/media/pages/exhibitions/past/sinasi-barutcu/73f7bef5c0-1634290574/a4069r5_studiomajo_r.jpeg",
     EventCenter: "Anıt Galeri",
@@ -313,14 +313,14 @@ const DATA = [
     Picture:
       "https://www.millireasuranssanatgalerisi.com/media/pages/exhibitions/past/sinasi-barutcu/73f7bef5c0-1634290574/a4069r5_studiomajo_r.jpeg",
     EventUrl: "fotografin-izinde-anilarin-pesinde",
-    EventStartDate: "2023-10-15T10:30:00",
+    EventStartDate: "2024-01-15T10:30:00",
     Artist: null,
   },
   {
     Type: "CONCERT",
     Id: 52605,
     FirstName: "Jazz Night: Pleasant Notes of the Evening",
-    EventEndDate: "2023-11-05T23:00:00",
+    EventEndDate: "2024-01-15T23:00:00",
     littleposter: "https://cazkolik.com/storage/gorseller/20130719_053932.jpg",
     EventCenter: "Swing Jazz Club",
     EventCenterLocation: {
@@ -333,14 +333,14 @@ const DATA = [
     Isitfree: false,
     Picture: "https://cazkolik.com/storage/gorseller/20130719_053932.jpg",
     EventUrl: "jazz-gecesi-aksamin-keyifli-notalari",
-    EventStartDate: "2023-11-05T20:30:00",
+    EventStartDate: "2024-01-15T20:30:00",
     Artist: "Melis Sarp",
   },
   {
     Type: "THEATRE",
     Id: 52651,
     FirstName: "Winds of Comedy: An Invitation to the Laughing Crisis",
-    EventEndDate: "2023-11-10T22:00:00",
+    EventEndDate: "2023-12-31T22:00:00",
     littleposter:
       "https://cdn1.kralmuzik.com.tr/media/img/920x570/22-12/05/eser-berfu-yenenler.JPG",
     EventCenter: "Komedi Sahnesi",
@@ -355,14 +355,14 @@ const DATA = [
     Picture:
       "https://cdn1.kralmuzik.com.tr/media/img/920x570/22-12/05/eser-berfu-yenenler.JPG",
     EventUrl: "komedi-ruzgarlari-gulme-krizine-davet",
-    EventStartDate: "2023-11-10T19:30:00",
+    EventStartDate: "2023-12-31T19:30:00",
     Artist: "Komedi Guruları Ekibi",
   },
   {
     Type: "CONCERT",
     Id: 5263,
     FirstName: "Pop Acoustic: Best Foreign Pop Songs",
-    EventEndDate: "2023-11-20T21:00:00",
+    EventEndDate: "2024-01-11T21:00:00",
     littleposter:
       "https://imgs.alem.com.tr/Documents/Alem_Dergi/images/2022/12/02/aralik-2022-CONCERTleri-667.jpg",
     EventCenter: "SoundUp CONCERT Salonu",
@@ -377,14 +377,14 @@ const DATA = [
     Picture:
       "https://imgs.alem.com.tr/Documents/Alem_Dergi/images/2022/12/02/aralik-2022-CONCERTleri-667.jpg",
     EventUrl: "pop-akustik-en-iyi-yabanci-pop-sarkilar",
-    EventStartDate: "2023-11-20T18:30:00",
+    EventStartDate: "2024-01-11T18:30:00",
     Artist: "Dilara Oruç",
   },
   {
     Type: "THEATRE",
     Id: 5264,
     FirstName: "Classics Stage: Night of Shakespeare Plays",
-    EventEndDate: "2023-11-25T23:30:00",
+    EventEndDate: "2023-12-31T23:30:00",
     littleposter:
       "https://www.beyazhaberajansi.com/images/haberler/2023/08/harbiye-acik-hava-da-klasikler-gecidi-4406.jpg",
     EventCenter: "Klasik Tiyatro Sahnesi",
@@ -399,14 +399,14 @@ const DATA = [
     Picture:
       "https://www.beyazhaberajansi.com/images/haberler/2023/08/harbiye-acik-hava-da-klasikler-gecidi-4406.jpg",
     EventUrl: "klasikler-sahnesi-shakespeare-oyunlari-gecesi",
-    EventStartDate: "2023-11-25T20:00:00",
+    EventStartDate: "2023-12-31T20:00:00",
     Artist: "Klasik Tiyatro Topluluğu",
   },
   {
     Type: "SHOW",
     Id: 52265,
     FirstName: "Dance in Color: Modern Art Exhibition",
-    EventEndDate: "2023-12-05T19:30:00",
+    EventEndDate: "2024-01-11T19:30:00",
     littleposter:
       "https://www.istanbulmodern.org/pic_lib/bigSize/resimgalerisi/120/istanbulmodernselmagurbuz3_120_5557789.jpg",
     EventCenter: "Modern Sanat Galerisi",
@@ -421,14 +421,14 @@ const DATA = [
     Picture:
       "https://www.istanbulmodern.org/pic_lib/bigSize/resimgalerisi/120/istanbulmodernselmagurbuz3_120_5557789.jpg",
     EventUrl: "renk-icinde-dans-modern-sanat-sergisi",
-    EventStartDate: "2023-12-01T10:00:00",
+    EventStartDate: "2024-01-11T10:00:00",
     Artist: "Modern Sanatçılar Derneği",
   },
   {
     Type: "CONCERT",
     Id: 5266,
     FirstName: "The Magical World of Acoustic Guitar",
-    EventEndDate: "2023-12-10T22:30:00",
+    EventEndDate: "2024-01-15T22:30:00",
     littleposter:
       "https://muzik.iksv.org/i/content/10058_1_PH_aliguler__(1_of_1)-22.jpg",
     EventCenter: "Harmony CONCERT Salonu",
@@ -443,7 +443,7 @@ const DATA = [
     Picture:
       "https://muzik.iksv.org/i/content/10058_1_PH_aliguler__(1_of_1)-22.jpg",
     EventUrl: "akustik-gitarin-buyulu-dunyasi",
-    EventStartDate: "2023-12-10T20:00:00",
+    EventStartDate: "2024-01-15T20:00:00",
     Artist: "Ege Yılmaz",
   },
   {
