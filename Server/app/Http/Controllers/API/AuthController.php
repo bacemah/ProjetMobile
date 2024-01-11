@@ -37,6 +37,8 @@ class AuthController extends Controller
         }
         return response()->json(['status' => '201', 'user' => $user], 201);
     }
+
+
     public function register(Request $request)
     {
         $ad = 0;
