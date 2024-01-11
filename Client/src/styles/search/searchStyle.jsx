@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Colors } from "../../../app.constants";
 
 export const styles = StyleSheet.create({
   searchHeader: {
@@ -44,4 +45,14 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     color: "#05375a",
   },
+   button: {
+        backgroundColor: Colors.dark,
+        borderWidth: 1,
+        borderColor: Colors.light,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        marginTop: 5,
+        borderRadius: 20,
+        alignSelf: 'flex-end',
+    },
 });

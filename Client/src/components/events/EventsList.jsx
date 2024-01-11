@@ -48,7 +48,7 @@ const EventsList = ({ data, title, navigation }) => {
                   navigation={navigation}
                 />
               )}
-              keyExtractor={(item) => item.Id}
+              keyExtractor={(item) => item.Id.toString() || index.toString()}
               horizontal={true}
               showsHorizontalScrollIndicator={false}
             />
