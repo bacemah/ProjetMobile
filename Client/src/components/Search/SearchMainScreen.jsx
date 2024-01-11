@@ -59,17 +59,17 @@ function SearchMainScreen({ navigation }) {
     if (selectedStartDate === "YYYY-MM-DD") return;
     if (selectedEndDate === "YYYY-MM-DD") {
       const filteredWithStartDateEvents = events.filter((event) => {
-        if (event.EtkinlikBaslamaTarihi === undefined) return false;
+        if (event.EventStartDate === undefined) return false;
 
-        const date = event.EtkinlikBaslamaTarihi.split("T")[0];
+        const date = event.EventStartDate.split("T")[0];
         return date >= selectedStartDate;
       });
       setFilteredEvents(filteredWithStartDateEvents);
     }
     const filteredWithDateEvents = events.filter((event) => {
-      if (event.EtkinlikBaslamaTarihi === undefined) return false;
+      if (event.EventStartDate === undefined) return false;
 
-      const date = event.EtkinlikBaslamaTarihi.split("T")[0];
+      const date = event.EventStartDate.split("T")[0];
       return date >= selectedStartDate && date <= selectedEndDate;
     });
     setFilteredEvents(filteredWithDateEvents);
@@ -80,13 +80,13 @@ function SearchMainScreen({ navigation }) {
     setSearchText(text);
     if (selectedStartDate == "YYYY-MM-DD") {
       const filtredWithText = events.filter((event) => {
-        return event.Adi.toLowerCase().includes(text.toLowerCase());
+        return event.FirstName.toLowerCase().includes(text.toLowerCase());
       });
       setSearchResults(filtredWithText);
       setLastResultsEvents(filtredWithText, ...filtredWithText);
     } else {
       const filteredEventsWithDateAndText = filteredEvents.filter((event) => {
-        return event.Adi.toLowerCase().includes(text.toLowerCase());
+        return event.FirstName.toLowerCase().includes(text.toLowerCase());
       });
       setSearchResults(filteredEventsWithDateAndText);
       setLastResultsEvents(filteredEventsWithDateAndText, ...filteredEvents);
@@ -130,13 +130,13 @@ function SearchMainScreen({ navigation }) {
           }
           renderItem={({ item }) => (
             <SearchCard
-              title={item.Adi}
-              date={item.EtkinlikBaslamaTarihi}
-              location={item.EtkinlikMerkezi}
-              image={item.KucukAfis}
+              title={item.FirstName}
+              date={item.EventStartDate}
+              location={item.EventCenter}
+              image={item.littleposter}
               onPress={() => {
                 navigation.navigate("EventDetail", {
-                  title: item.Adi,
+                  title: item.FirstName,
                   id: item.Id,
                 });
               }}

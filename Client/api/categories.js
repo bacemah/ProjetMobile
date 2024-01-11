@@ -1,9 +1,9 @@
 const DATA = [
   {
-    Type: "KONSER", 
+    Type: "CONCERT", 
     // tur 
     Id: 52591,
-    FirstName: "Akustik Gitar Akşamı: Sevgi Melodileri",
+    FirstName: "Acoustic Guitar Evening: Melodies of Love",
     // Adi
     EventEndDate: "2023-10-18T22:00:00",
     // EtkinlikBitisTarihi
@@ -19,7 +19,7 @@ const DATA = [
       longitudel: 29.0054,
       // Boylam
     },
-    ShortDescription: "Duygusal anlar yaşatacak akustik gitar performansları.",
+    ShortDescription: "Acoustic guitar performances that will give you emotional moments.",
     // KisaAciklama
     TicketSalesLink: "https://orneklink.com/bilet19",
     // BiletSatisLinki
@@ -36,7 +36,7 @@ const DATA = [
     // Sanatci
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 52601,
     FirstName: "Klasik Komedi: Bir Delinin Hatıra Defteri",
     EventEndDate: "2023-10-20T21:30:00",
@@ -57,7 +57,7 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 52612,
     FirstName: "Ritim Akşamları: Latin Dans Partisi",
     EventEndDate: "2023-10-25T00:00:00",
@@ -78,7 +78,7 @@ const DATA = [
     Artist: "Ritmo Latino Dans Grubu",
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 5262,
     FirstName: "Doğanın İzinde: Doğa Fotoğrafçılığı Sergisi",
     EventEndDate: "2023-10-28T17:00:00",
@@ -100,7 +100,7 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 5250,
     FirstName: "Sinema Benim Aşkım - Türkan Soray Kostüm ve Afiş Sergisi",
     EventEndDate: "2023-09-17T17:30:00",
@@ -122,7 +122,7 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5251,
     FirstName: "Caz Gecesi: En İyi Caz Performansları",
     EventEndDate: "2023-09-20T23:00:00",
@@ -144,19 +144,19 @@ const DATA = [
     Artist: "Müge Ersoy",
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 5252,
-    FirstName: "Komedi Şöleni: Gülme Garantili Komedi Oyunları",
+    FirstName: "Comedy Feast: Comedy Games Guaranteed to Laugh",
     EventEndDate: "2023-09-25T22:00:00",
     littleposter:
       "https://i4.hurimg.com/i/hurriyet/75/750x422/5d78c77145d2a023a0d35648.jpg",
-    EventCenter: "Gülmece Tiyatro Sahnesi",
+    EventCenter: "Gülmece Theater Stage",
     EventCenterLocation: {
       Latitude: 41.0283,
       longitudel: 29.0015,
     },
     ShortDescription:
-      "Karnınız ağrıyana kadar güleceğiniz, komedi dolu bir gece sizi bekliyor!",
+      "A night full of comedy, where you will laugh until your stomach hurts, awaits you!",
     TicketSalesLink: "https://orneklink.com/bilet3",
     Isitfree: false,
     Picture:
@@ -166,9 +166,9 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 5253,
-    FirstName: "Rönesans Rüzgarları: Ressamların Büyülü Dünyası",
+    FirstName: "Winds of the Renaissance: The Magical World of Painters",
     EventEndDate: "2023-09-30T18:00:00",
     littleposter: "https://flaps.club/wp-content/uploads/2019/04/unnamed-2.png",
     EventCenter: "Sanat Çağı Galerisi",
@@ -177,7 +177,7 @@ const DATA = [
       longitudel: 29.0058,
     },
     ShortDescription:
-      "Rönesans dönemi ressamlarının eşsiz eserlerinin sergilendiği etkileyici bir sergi.",
+      "An impressive exhibition where the unique works of Renaissance period painters are exhibited.",
     TicketSalesLink: null,
     Isitfree: true,
     Picture: "https://flaps.club/wp-content/uploads/2019/04/unnamed-2.png",
@@ -186,9 +186,9 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5254,
-    FirstName: "Rock Gecesi: Efsane Rock Gruplarından Seçkiler",
+    FirstName: "Rock Night: Selections from Legendary Rock Bands",
     EventEndDate: "2023-10-05T23:30:00",
     littleposter:
       "https://beyazgezegen.com/wp-content/uploads/2019/10/Ramones-1st_Album_Placeholder_Image.jpg",
@@ -198,7 +198,7 @@ const DATA = [
       longitudel: 28.9755,
     },
     ShortDescription:
-      "Rock müziğin enerjisiyle dolu, unutulmaz bir gece sizi bekliyor!",
+      "An unforgettable night full of the energy of rock music awaits you!",
     TicketSalesLink: "https://orneklink.com/bilet5",
     Isitfree: false,
     Picture:
@@ -208,9 +208,9 @@ const DATA = [
     Artist: "Black Roses",
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 5255,
-    FirstName: "Dramatik Yolculuklar: Duygusal Tiyatro Gecesi",
+    FirstName: "Dramatic Journeys: A Night of Emotional Theater",
     EventEndDate: "2023-10-10T21:30:00",
     littleposter:
       "https://cdn.evrimagaci.org/sZQwQgecN8z6NV4d4Nc3ckjvfCA=/evrimagaci.org%2Fpublic%2Fcontent_media%2F75009ecf55317438f7ed7b7e71dcd54a.jpg",
@@ -220,7 +220,7 @@ const DATA = [
       longitudel: 29.004,
     },
     ShortDescription:
-      "Derin duyguların işlendiği etkileyici bir tiyatro performansı.",
+      "An impressive theater performance with deep emotions.",
     TicketSalesLink: "https://orneklink.com/bilet6",
     Isitfree: false,
     Picture:
@@ -230,9 +230,9 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 5256,
-    FirstName: "Modern Sanatın İzinde: Soyut Tablolar Sergisi",
+    FirstName: "In Search of Modern Art: Abstract Paintings Exhibition",
     EventEndDate: "2023-10-15T19:30:00",
     littleposter:
       "https://www.klashaber.com.tr/images/haberler/2020/07/istanbul_modernin_koleksiyon_sergisi_yenilendi_h42085_870be.jpg",
@@ -242,7 +242,7 @@ const DATA = [
       longitudel: 28.9863,
     },
     ShortDescription:
-      "Modern sanatın en çarpıcı örneklerini bulabileceğiniz bir sergi deneyimi.",
+      "An exhibition experience where you can find the most striking examples of modern art.",
     TicketSalesLink: null,
     Isitfree: true,
     Picture:
@@ -252,19 +252,19 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5257,
-    FirstName: "Klasik Akustik: En Sevilen Klasik Eseler",
+    FirstName: "Classical Acoustics: Favorite Classical Works",
     EventEndDate: "2023-10-18T22:00:00",
     littleposter:
       "https://www.kku.edu.tr/Content/Anasayfa/Haber/NewFolder/gitar3.jpg",
-    EventCenter: "Harmony Konser Salonu",
+    EventCenter: "Harmony CONCERT Salonu",
     EventCenterLocation: {
       Latitude: 41.0102,
       longitudel: 28.9721,
     },
     ShortDescription:
-      "Klasik müziğin büyülü dünyasına klasik gitar eşliğinde unutulmaz bir yolculuk.",
+      "An unforgettable journey to the magical world of classical music accompanied by classical guitar.",
     TicketSalesLink: "https://orneklink.com/bilet8",
     Isitfree: false,
     Picture: "https://www.kku.edu.tr/Content/Anasayfa/Haber/NewFolder/gitar3.jpg",
@@ -273,9 +273,9 @@ const DATA = [
     Artist: "Emre Aydın",
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 5258,
-    FirstName: "Gizemli Sahneler: Polisiye Tiyatro Gösterisi",
+    FirstName: "Mysterious Scenes: Detective Theater Show",
     EventEndDate: "2023-10-22T20:30:00",
     littleposter:
       "https://www.istanbulses.com/d/other/2022/03/07/aI8fltkqx1fd6av2xbn5zrwv.jpg",
@@ -285,7 +285,7 @@ const DATA = [
       longitudel: 29.0037,
     },
     ShortDescription:
-      "Gizem ve heyecan dolu polisiye tiyatro eserleriyle unutulmaz bir akşam.",
+      "An unforgettable evening with detective theater works full of mystery and excitement.",
     TicketSalesLink: "https://orneklink.com/bilet9",
     Isitfree: false,
     Picture:
@@ -295,9 +295,9 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 52592,
-    FirstName: "Fotoğrafın İzinde: Anıların Peşinde",
+    FirstName: "In Search of Photography: Chasing Memories",
     EventEndDate: "2023-10-27T16:30:00",
     littleposter:
       "https://www.millireasuranssanatgalerisi.com/media/pages/exhibitions/past/sinasi-barutcu/73f7bef5c0-1634290574/a4069r5_studiomajo_r.jpeg",
@@ -307,7 +307,7 @@ const DATA = [
       longitudel: 28.9932,
     },
     ShortDescription:
-      "Fotoğraflarla geçmişe nostaljik bir yolculuk: Anıların izinde sergisi.",
+      "A nostalgic journey to the past with photographs: In the footsteps of memories exhibition.",
     TicketSalesLink: null,
     Isitfree: true,
     Picture:
@@ -317,9 +317,9 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 52605,
-    FirstName: "Jazz Gecesi: Akşamın Keyifli Notaları",
+    FirstName: "Jazz Night: Pleasant Notes of the Evening",
     EventEndDate: "2023-11-05T23:00:00",
     littleposter: "https://cazkolik.com/storage/gorseller/20130719_053932.jpg",
     EventCenter: "Swing Jazz Club",
@@ -328,7 +328,7 @@ const DATA = [
       longitudel: 29.0302,
     },
     ShortDescription:
-      "Soul ve cazın eşsiz birleşimiyle dolu bir akşamın tadını çıkarın.",
+      "Enjoy an evening filled with the unique combination of soul and jazz.",
     TicketSalesLink: "https://orneklink.com/bilet11",
     Isitfree: false,
     Picture: "https://cazkolik.com/storage/gorseller/20130719_053932.jpg",
@@ -337,9 +337,9 @@ const DATA = [
     Artist: "Melis Sarp",
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 52651,
-    FirstName: "Komedi Rüzgarları: Gülme Krizine Davet",
+    FirstName: "Winds of Comedy: An Invitation to the Laughing Crisis",
     EventEndDate: "2023-11-10T22:00:00",
     littleposter:
       "https://cdn1.kralmuzik.com.tr/media/img/920x570/22-12/05/eser-berfu-yenenler.JPG",
@@ -349,7 +349,7 @@ const DATA = [
       longitudel: 28.9769,
     },
     ShortDescription:
-      "Gülmekten karnınıza ağrı girecek bir komedi tiyatrosu deneyimi.",
+      "A comedy theater experience that will make your stomach hurt from laughing.",
     TicketSalesLink: "https://orneklink.com/bilet12",
     Isitfree: false,
     Picture:
@@ -359,31 +359,31 @@ const DATA = [
     Artist: "Komedi Guruları Ekibi",
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5263,
-    FirstName: "Pop Akustik: En İyi Yabancı Pop Şarkılar",
+    FirstName: "Pop Acoustic: Best Foreign Pop Songs",
     EventEndDate: "2023-11-20T21:00:00",
     littleposter:
-      "https://imgs.alem.com.tr/Documents/Alem_Dergi/images/2022/12/02/aralik-2022-konserleri-667.jpg",
-    EventCenter: "SoundUp Konser Salonu",
+      "https://imgs.alem.com.tr/Documents/Alem_Dergi/images/2022/12/02/aralik-2022-CONCERTleri-667.jpg",
+    EventCenter: "SoundUp CONCERT Salonu",
     EventCenterLocation: {
       Latitude: 41.0056,
       longitudel: 28.985,
     },
     ShortDescription:
-      "Pop müziğin hit şarkılarını akustik düzLatitudeelerle dinleyeceğiniz bir gece.",
+      "A night where you will listen to the hit songs of pop music with acoustic flat latitudes.",
     TicketSalesLink: "https://orneklink.com/bilet14",
     Isitfree: false,
     Picture:
-      "https://imgs.alem.com.tr/Documents/Alem_Dergi/images/2022/12/02/aralik-2022-konserleri-667.jpg",
+      "https://imgs.alem.com.tr/Documents/Alem_Dergi/images/2022/12/02/aralik-2022-CONCERTleri-667.jpg",
     EventUrl: "pop-akustik-en-iyi-yabanci-pop-sarkilar",
     EventStartDate: "2023-11-20T18:30:00",
     Artist: "Dilara Oruç",
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 5264,
-    FirstName: "Klasikler Sahnesi: Shakespeare Oyunları Gecesi",
+    FirstName: "Classics Stage: Night of Shakespeare Plays",
     EventEndDate: "2023-11-25T23:30:00",
     littleposter:
       "https://www.beyazhaberajansi.com/images/haberler/2023/08/harbiye-acik-hava-da-klasikler-gecidi-4406.jpg",
@@ -393,7 +393,7 @@ const DATA = [
       longitudel: 29.0204,
     },
     ShortDescription:
-      "Shakespeare'ın en ünlü oyunlarının sahneleneceği büyülü bir gece.",
+      "A magical night where Shakespeare's most famous plays will be staged.",
     TicketSalesLink: "https://orneklink.com/bilet15",
     Isitfree: false,
     Picture:
@@ -403,9 +403,9 @@ const DATA = [
     Artist: "Klasik Tiyatro Topluluğu",
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 52265,
-    FirstName: "Renk İçinde Dans: Modern Sanat Sergisi",
+    FirstName: "Dance in Color: Modern Art Exhibition",
     EventEndDate: "2023-12-05T19:30:00",
     littleposter:
       "https://www.istanbulmodern.org/pic_lib/bigSize/resimgalerisi/120/istanbulmodernselmagurbuz3_120_5557789.jpg",
@@ -415,7 +415,7 @@ const DATA = [
       longitudel: 28.9765,
     },
     ShortDescription:
-      "Renklerin ve formların dansının yer aldığı çağdaş sanatın izleri.",
+      "Traces of contemporary art featuring the dance of colors and forms.",
     TicketSalesLink: null,
     Isitfree: true,
     Picture:
@@ -425,19 +425,19 @@ const DATA = [
     Artist: "Modern Sanatçılar Derneği",
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5266,
-    FirstName: "Akustik Gitarın Büyülü Dünyası",
+    FirstName: "The Magical World of Acoustic Guitar",
     EventEndDate: "2023-12-10T22:30:00",
     littleposter:
       "https://muzik.iksv.org/i/content/10058_1_PH_aliguler__(1_of_1)-22.jpg",
-    EventCenter: "Harmony Konser Salonu",
+    EventCenter: "Harmony CONCERT Salonu",
     EventCenterLocation: {
       Latitude: 40.9937,
       longitudel: 29.0237,
     },
     ShortDescription:
-      "Akustik gitarın nağmeleriyle dolu sıcacık bir konser gecesi.",
+      "A warm CONCERT night filled with the melodies of the acoustic guitar.",
     TicketSalesLink: "https://orneklink.com/bilet17",
     Isitfree: false,
     Picture:
@@ -447,7 +447,7 @@ const DATA = [
     Artist: "Ege Yılmaz",
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 5267,
     FirstName: "Gizemli Yolculuk: Interaktif Tiyatro Deneyimi",
     EventEndDate: "2023-12-15T21:45:00",
@@ -469,7 +469,7 @@ const DATA = [
     Artist: "Interaktif Tiyatro Ekibi",
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 5268,
     FirstName: "Işığın İzinde: Fotoğrafçılık Sergisi",
     EventEndDate: "2023-12-20T20:30:00",
@@ -491,7 +491,7 @@ const DATA = [
     Artist: "Fotoğraf Sanatçıları Grubu",
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5269,
     FirstName: "Rock Efsaneleri Canlı: Unutulmaz Hits",
     EventEndDate: "2023-12-25T23:59:00",
@@ -503,7 +503,7 @@ const DATA = [
       longitudel: 29.0231,
     },
     ShortDescription:
-      "Rock müziğin efsanevi şarkılarına doyacağınız muhteşem bir konser serisi.",
+      "Rock müziğin efsanevi şarkılarına doyacağınız muhteşem bir CONCERT serisi.",
     TicketSalesLink: "https://orneklink.com/bilet20",
     Isitfree: false,
     Picture: "https://www.radyoodtu.com.tr/images/zbam/progresifmuzik_211219.jpg",
@@ -512,7 +512,7 @@ const DATA = [
     Artist: "RockStar Tribute Band",
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 5270,
     FirstName: "Romeo ve Juliet: Modern Yorum",
     EventEndDate: "2024-01-05T22:00:00",
@@ -534,7 +534,7 @@ const DATA = [
     Artist: "Genç Sahne Oyuncuları",
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5271,
     FirstName: "Cazın Büyülü Dünyası: Geceyarısı Sesi",
     EventEndDate: "2024-01-10T23:00:00",
@@ -546,7 +546,7 @@ const DATA = [
       longitudel: 29.0126,
     },
     ShortDescription:
-      "Cazın büyülü ritimleriyle geçecek unutulmaz bir konser deneyimi.",
+      "Cazın büyülü ritimleriyle geçecek unutulmaz bir CONCERT deneyimi.",
     TicketSalesLink: "https://orneklink.com/bilet22",
     Isitfree: false,
     Picture:
@@ -556,7 +556,7 @@ const DATA = [
     Artist: "Jazz Delisi Orkestrası",
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 5272,
     FirstName: "Geleceğin İzleri: Dijital Sanat Sergisi",
     EventEndDate: "2024-01-15T18:30:00",
@@ -578,13 +578,13 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5273,
     FirstName: "Sinfonietta Akşamları: Beethoven'in İzinde",
     EventEndDate: "2024-01-20T21:30:00",
     littleposter:
       "https://www.beyazhaberajansi.com/images/haberler/2023/07/idil-biret-muzik-festivali-7-temmuz-da-basliyor-8844.jpg",
-    EventCenter: "Devlet Senfoni Orkestrası Konser Salonu",
+    EventCenter: "Devlet Senfoni Orkestrası CONCERT Salonu",
     EventCenterLocation: {
       Latitude: 40.9879,
       longitudel: 29.0258,
@@ -600,7 +600,7 @@ const DATA = [
     Artist: "Devlet Senfoni Orkestrası",
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 5274,
     FirstName: "Büyülü Orman: Çocuk Tiyatro Gösterisi",
     EventEndDate: "2024-01-25T17:00:00",
@@ -622,7 +622,7 @@ const DATA = [
     Artist: "Çocuk Tiyatrosu Topluluğu",
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 5275,
     FirstName: "Renk Şöleni: Modern Sanatın İzinde",
     EventEndDate: "2024-02-01T20:00:00",
@@ -644,7 +644,7 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5276,
     FirstName: "Akustik Geceler: Unplugged Performanslar",
     EventEndDate: "2024-02-05T23:30:00",
@@ -666,7 +666,7 @@ const DATA = [
     Artist: "Çeşitli Sanatçılar",
   },
   {
-    Type: "TİYATRO",
+    Type: "THEATRE",
     Id: 5277,
     FirstName: "Komedi Manzaraları: Gülmek Garanti",
     EventEndDate: "2024-02-10T21:30:00",
@@ -686,7 +686,7 @@ const DATA = [
     Artist: "Komedi Guruları Topluluğu",
   },
   {
-    Type: "SERGİ",
+    Type: "SHOW",
     Id: 5278,
     FirstName: "Rüya Gibi Fotoğraflar: Anı Yakalama Sanatı",
     EventEndDate: "2024-02-15T19:30:00",
@@ -708,7 +708,7 @@ const DATA = [
     Artist: null,
   },
   {
-    Type: "KONSER",
+    Type: "CONCERT",
     Id: 5279,
     FirstName: "Dünya Ritmileri Gecesi",
     EventEndDate: "2024-02-20T22:30:00",
@@ -720,7 +720,7 @@ const DATA = [
       longitudel: 28.9827,
     },
     ShortDescription:
-      "Farklı ülkelerden geleneksel ritimlerin harmanlandığı eşsiz bir konser deneyimi.",
+      "Farklı ülkelerden geleneksel ritimlerin harmanlandığı eşsiz bir CONCERT deneyimi.",
     TicketSalesLink: "https://orneklink.com/bilet30",
     Isitfree: false,
     Picture:
@@ -913,16 +913,16 @@ const DATA = [
 
 export const getCategories = () => {
   let categories = [];
-  DATA.forEach((etkinlik) => {
-    if (!categories.includes(etkinlik.Type)) {
-      categories.push(etkinlik.Type);
+  DATA.forEach((activity) => {
+    if (!categories.includes(activity.Type)) {
+      categories.push(activity.Type);
     }
   });
   return categories;
 };
 
 export const getEventsByCategory = (category) => {
-  return DATA.filter((etkinlik) => etkinlik.Type === category);
+  return DATA.filter((activity) => activity.Type === category);
 };
 
 export const getAllEvent = () => {
@@ -930,13 +930,13 @@ export const getAllEvent = () => {
 };
 
 export const getEventById = (id) => {
-  return DATA.find((etkinlik) => etkinlik.Id === id);
+  return DATA.find((activity) => activity.Id === id);
 };
 
 export const getOldEvents = () => {
-  return DATA.filter((etkinlik) => {
+  return DATA.filter((activity) => {
     let today = new Date();
-    let etkinlikTarihi = new Date(etkinlik.EventStartDate);
-    return etkinlikTarihi < today;
+    let eventDate = new Date(activity.EventStartDate);
+    return eventDate < today;
   });
 };

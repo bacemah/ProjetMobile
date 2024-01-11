@@ -37,14 +37,14 @@ const EventsList = ({ data, title, navigation }) => {
                       : item.Adi
                   }
                   location={
-                    item.EtkinlikMerkezi.length > 20
-                      ? item?.EtkinlikMerkezi.slice(0, 20) + "..."
-                      : item?.EtkinlikMerkezi
+                    item.EventCenter.length > 20
+                      ? item?.EventCenter.slice(0, 20) + "..."
+                      : item?.EventCenter
                   }
-                  date={item.EtkinlikBaslamaTarihi.toString().split("T")[0]}
-                  price={item.UcretsizMi}
+                  date={item.EventStartDate.toString().split("T")[0]}
+                  price={item.Isitfree}
                   id={item.Id}
-                  eventImage={item.KucukAfis}
+                  eventImage={item.littleposter}
                   navigation={navigation}
                 />
               )}
