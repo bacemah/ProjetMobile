@@ -893,7 +893,7 @@ const DATA = [
     Type: "SPORTIF",
     Id: 5410,
     FirstName: "Tenis Turnuvası",
-    EventEndDate: "2023-09-12T17:30:00",
+    EventEndDate: "2024-09-12T17:30:00",
     littleposter:
       "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/46000/46340.jpg",
     EventCenter: "Tenis Kulübü",
@@ -902,7 +902,7 @@ const DATA = [
     Isitfree: false,
     Picture: "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/46000/46340.jpg",
     EventUrl: "tenis-turnuvasi",
-    EventStartDate: "2023-09-12T14:00:00",
+    EventStartDate: "2024-09-12T14:00:00",
     Artist: null,
     EventCenterLocation: {
       Latitude: 51.1657,

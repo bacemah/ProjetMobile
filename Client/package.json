@@ -26,6 +26,7 @@
     "react-native-calendar-picker": "^7.1.4",
     "react-native-dialog-input": "^1.0.8",
     "react-native-maps": "^1.9.1",
+    "react-native-modal": "^13.0.1",
     "react-native-paper": "^5.11.6",
     "react-native-select-multiple": "^2.1.0",
     "react-native-web": "~0.19.6"

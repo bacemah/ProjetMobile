@@ -4,6 +4,7 @@ import { SafeAreaView, Text, TextInput, View } from "react-native";
 
 import { styles } from "../../styles/search/searchStyle";
 import { FontAwesome } from "@expo/vector-icons";
+import { Colors } from "../../../app.constants";
 
 import SearchCard from "./SearchCard";
 
@@ -30,7 +31,6 @@ function SearchMainScreen({ navigation }) {
   const maxDate = new Date(2024, 12, 31);
 
   const onDateChange = (date, type) => {
-    console.log(JSON.stringify(date));
     const newDate = JSON.stringify(date);
     const newDate2 = newDate.substring(1, newDate.length - 1);
     const dates = newDate2.split("T");
@@ -49,32 +49,43 @@ function SearchMainScreen({ navigation }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = getAllEvent();
+      const data = await getAllEvent();
       setEvents(data);
     };
     fetchData();
   }, []);
 
+  const handler = () => {setIsOpen(false)}
+    
   useEffect(() => {
-    if (selectedStartDate === "YYYY-MM-DD") return;
+    if (selectedStartDate === "YYYY-MM-DD")
+      return  ; 
+
     if (selectedEndDate === "YYYY-MM-DD") {
       const filteredWithStartDateEvents = events.filter((event) => {
-        if (event.EventStartDate === undefined) return false;
+
+        if (event.EventStartDate === undefined)
+          return false  ;
 
         const date = event.EventStartDate.split("T")[0];
+
         return date >= selectedStartDate;
       });
+
       setFilteredEvents(filteredWithStartDateEvents);
+      console.log(filteredEvents)
     }
     const filteredWithDateEvents = events.filter((event) => {
       if (event.EventStartDate === undefined) return false;
 
       const date = event.EventStartDate.split("T")[0];
       return date >= selectedStartDate && date <= selectedEndDate;
+
     });
     setFilteredEvents(filteredWithDateEvents);
     setLastResultsEvents(filteredWithDateEvents, ...searchResults);
   }, [selectedStartDate, selectedEndDate]);
+  
 
   const handleSearch = (text) => {
     setSearchText(text);
@@ -123,11 +134,7 @@ function SearchMainScreen({ navigation }) {
 
       <View style={styles.searchBody}>
         <FlatList
-          data={
-            searchResults.length > 0 || filteredEvents.length > 0
-              ? lastResultsEvents
-              : events
-          }
+          data={searchResults.length > 0 || filteredEvents.length >  0 ? filteredEvents : events }
           renderItem={({ item }) => (
             <SearchCard
               title={item.FirstName}
@@ -142,76 +149,79 @@ function SearchMainScreen({ navigation }) {
               }}
             />
           )}
-          keyExtractor={(item) => item.Id}
+          keyExtractor={(item) => item.Id.toString() || index.toString()}
         />
       </View>
-
-      <View>
-        <Modal
-          isVisible={isOpen}
-          onBackButtonPress={() => setIsOpen(false)}
-          onBackdropPress={() => setIsOpen(false)}
+       <Modal
+        visible={isOpen}
+        onRequestClose={handler}
           style={{
             justifyContent: "flex-end",
             margin: 0,
           }}
         >
-          <View
-            style={{
+          <View style={{
               backgroundColor: "white",
               borderRadius: 10,
               alignItems: "center",
               height: 400,
             }}
           >
-            <Text
-              style={{
-                fontSize: 20,
-                fontWeight: "bold",
-                marginTop: 20,
-                marginBottom: 20,
-              }}
-            >
-              Aramanı Filtrele
-            </Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: "bold",
+                  marginTop: 20,
+                  marginBottom: 20,
+                }}
+              >
+                  Filter Your Search
+              </Text>
 
-            <View
-              style={{
-                width: "100%",
-              }}
-            >
-              <CalendarPicker
-                startFromMonday={true}
-                allowRangeSelection={true}
-                minDate={minDate}
-                maxDate={maxDate}
-                todayBackgroundColor="#f2e6ff"
-                selectedDayColor="#7300e6"
-                selectedDayTextColor="#FFFFFF"
-                onDateChange={onDateChange}
-                weekdays={["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"]}
-                months={[
-                  "Ocak",
-                  "Şubat",
-                  "Mart",
-                  "Nisan",
-                  "Mayıs",
-                  "Haziran",
-                  "Temmuz",
-                  "Ağustos",
-                  "Eylül",
-                  "Ekim",
-                  "Kasım",
-                  "Aralık",
-                ]}
-                previousTitle="Geri"
-                nextTitle="İleri"
-                width={350}
-              />
-            </View>
+              <View
+                style={{
+                  width: "100%",
+                }}
+              >
+                <CalendarPicker
+                  startFromMonday={true}
+                  allowRangeSelection={true}
+                  minDate={minDate}
+                  maxDate={maxDate}
+                  todayBackgroundColor="#f2e6ff"
+                  selectedDayColor="#7300e6"
+                  selectedDayTextColor="#FFFFFF"
+                  onDateChange={onDateChange}
+                  weekdays={["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Satur"]}
+                  months={[
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July",
+                  "August",
+                  "September",
+                  "October",
+                  "November",
+                  "December",
+                  ]}
+                  previousTitle="Previous"
+                  nextTitle="Next"
+                  width={350}
+                />
+              </View>
+               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <TouchableOpacity  style={styles.button} onPress={handler}>
+                                <Text style={{ color: Colors.light, textAlign: 'center' }}>Accept Date</Text>
+                            </TouchableOpacity>
+                </View> 
+
+          
           </View>
         </Modal>
-      </View>
+
     </SafeAreaView>
   );
 }
