@@ -72,7 +72,7 @@ const FormComponent = (props) => {
         if (type === 'register') return nom.trim().length > 0 && prenom.trim().length > 0 && emailTouched && validateEmail() && password == confirm_password && password.trim().length > 0 && checked.length > 0 ;
 
     }
-    const radioAdminHander = ()=>{
+    const radioAdminHandler = ()=>{
         setChecked("Admin")
     }
     const radioUserHandler = ()=>{
@@ -83,7 +83,7 @@ const FormComponent = (props) => {
         setIsLoading(true);
         const response = await fetch(`${apiURL}/register`, {
             method: "POST",
-            body: JSON.stringify({ 'first_name': prenom, 'last_name': nom, 'email': email, 'password': password , 'isAdmin' : 0 }),
+            body: JSON.stringify({ 'first_name': prenom, 'last_name': nom, 'email': email, 'password': password , 'isAdmin' : checked }),
             headers: { 'Content-Type': 'Application/json' }
         });
 
@@ -106,6 +106,7 @@ const FormComponent = (props) => {
     }
 
     const login = async () => {
+        console.log(`${apiURL}/login`);
         setIsLoading(true);
         const response = await fetch(`${apiURL}/login`, {
             method: "POST",
@@ -228,7 +229,7 @@ const FormComponent = (props) => {
                             <RadioButton 
                             value='Admin'
                             color={Colors.light}
-                            onPress={radioAdminHander}
+                            onPress={radioAdminHandler}
                             status={ checked === 'Admin' ? 'checked' : 'unchecked'  }
 
                         />
@@ -288,7 +289,6 @@ const FormComponent = (props) => {
                             <View style={styles.buttonContainer}>
                                 <TouchableOpacity
                                     style={styles.button}
-                                    disabled={isFormValid()}
                                     onPress={handleSubmit}>
                                     {isLoading ? (
                                         <ActivityIndicator color={Colors.light} />

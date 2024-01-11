@@ -21,11 +21,9 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'email',
-        'is_admin',
         'password',
-        'type',
         'isAdmin',
-        'picture',
+        'type',
     ];
 
     /**
@@ -47,8 +45,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function groups()
-    {
-        return $this->belongsToMany(Group::class, 'user_groups', 'user_id', 'group_id');
-    }
+    // public function groups()
+    // {
+    //     return $this->belongsToMany(Group::class, 'user_groups', 'user_id', 'group_id');
+    // }
 }

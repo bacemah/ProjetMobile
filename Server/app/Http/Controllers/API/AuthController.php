@@ -39,7 +39,8 @@ class AuthController extends Controller
     }
     public function register(Request $request)
     {
-        if ($request->isAdmin == 'admin') {
+        $ad = 0;
+        if ($request->isAdmin == 'Admin') {
             $ad = 1;
         } else {
             $ad = 0;
@@ -63,9 +64,9 @@ class AuthController extends Controller
             Cache::put('verification_number_' . $user->id, $verificationNumber, 30 * 60);
             Mail::to($user)->send(new EmailVerification($user, $verificationNumber));
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Profil avec cet addresse mail existe.', 'status' => '500'], 500);
+            return response()->json(['message' => 'Profil avec cette addresse mail existe.', 'status' => '500'], 500);
         }
-        return response()->json(['message' => 'Veuiller valider par mail la création de votre profil.', 'status' => '201', 'user' => $user], 201);
+        return response()->json(['message' => 'Veuillez valider par mail la création de votre profil.', 'status' => '201', 'user' => $user], 201);
     }
 
     public function login(Request $request)
@@ -75,7 +76,8 @@ class AuthController extends Controller
             'password'  => 'required',
         ]);
 
-        $user = User::where('email', $request['email'])->first();
+
+        $user = User::where('email', $request->email)->first();
 
         if (!$user) {
             return response()->json(['message' => 'Email inexistant', 'status' => '404']);

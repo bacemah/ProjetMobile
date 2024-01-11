@@ -3,7 +3,10 @@ const { expoConfig } = Constants;
 
 
 export const GlobalConstants = {
-   apiURL: (expoConfig.debuggerHost) ? `http://${manifest.debuggerHost.split(':').shift()}:8000/api` : "http://127.0.0.1:8000/api"
+    // apiURL: (expoConfig.debuggerHost) ? `http://${expoConfig.debuggerHost.split(':').shift()}:8000/api` : "http://127.0.0.1:8000/api",
+    // apiURL: Constants?.expoConfig?.hostUri ? Constants.expoConfig.hostUri.split(`:`).shift().concat(`:8000/api`) : "http://127.0.0.1:8000/api",
+    apiURL: Constants?.expoConfig?.hostUri ? 'http://'.concat(Constants.expoConfig.hostUri.split(`:`).shift(),`:8000/api`) : "http://127.0.0.1:8000/api",
+// apiURL: "http://192.168.34.110:8000/api",
 
 }
 
